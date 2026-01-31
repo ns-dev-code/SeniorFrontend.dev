@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { BookOpen, Star, Package, Activity, Layers, Repeat, Zap, Eye } from "lucide-react";
+import { BookOpen, Star, Package, Activity, Layers, Repeat, Zap, Eye, FolderTree, Plug, TestTube, Workflow, BarChart3, Users, Gauge, Flame } from "lucide-react";
 
 const platformLinks = [
   {
@@ -14,14 +14,24 @@ const platformLinks = [
     ]
   },
   {
-    title: "CORE PILLARS",
+    title: "DEEP-DIVE TOPICS",
     items: [
       { name: "React Internals", href: "/topic/react", icon: Layers },
       { name: "Next.js & SSR", href: "/topic/nextjs", icon: Zap },
       { name: "Performance", href: "/topic/performance", icon: Activity },
       { name: "Accessibility", href: "/topic/accessibility", icon: Eye },
-      { name: "JS Core", href: "/topic/javascript", icon: Repeat },
-      { name: "System Design", href: "/topic/system-design", icon: Package },
+    ]
+  },
+  {
+    title: "RAPID-FIRE 🔥",
+    items: [
+      { name: "Architecture", href: "/topic/frontend-architecture", icon: FolderTree },
+      { name: "API Integration", href: "/topic/api-integration", icon: Plug },
+      { name: "Testing", href: "/topic/testing", icon: TestTube },
+      { name: "CI/CD", href: "/topic/cicd", icon: Workflow },
+      { name: "Analytics", href: "/topic/analytics", icon: BarChart3 },
+      { name: "Leadership", href: "/topic/leadership", icon: Users },
+      { name: "Perf Quick-Fire", href: "/topic/performance-rapid", icon: Gauge },
     ]
   }
 ];
@@ -40,6 +50,7 @@ export function Sidebar() {
             {section.items.map((item) => {
               const active = pathname === item.href;
               const Icon = item.icon;
+              const isRapidFire = section.title === "RAPID-FIRE 🔥";
               
               return (
                 <Link
@@ -48,7 +59,9 @@ export function Sidebar() {
                   className={cn(
                     "flex items-center gap-3 px-4 py-2 text-sm font-medium transition-all group",
                     active 
-                      ? "bg-react-blue-subtle text-react-blue rounded-full" 
+                      ? isRapidFire
+                        ? "bg-orange-500/10 text-orange-600 rounded-full"
+                        : "bg-react-blue-subtle text-react-blue rounded-full" 
                       : "text-ink-subtle hover:bg-canvas-subtle hover:text-ink rounded-full"
                   )}
                 >
@@ -56,7 +69,9 @@ export function Sidebar() {
                     size={16} 
                     className={cn(
                       "transition-colors group-hover:text-ink",
-                      active ? "text-react-blue" : "text-ink/40"
+                      active 
+                        ? isRapidFire ? "text-orange-600" : "text-react-blue" 
+                        : "text-ink/40"
                     )} 
                   />
                   {item.name}
