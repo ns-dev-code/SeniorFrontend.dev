@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Layers, Activity, Repeat, Package, BookOpen, Zap, Eye } from "lucide-react";
+import { ArrowRight, Layers, Activity, Repeat, Package, BookOpen, Zap, Eye, FolderTree, Plug, TestTube, Workflow, BarChart3, Users, Gauge } from "lucide-react";
 import { getAllTopics } from "@/lib/topics";
 
 const iconMap = {
@@ -10,6 +10,13 @@ const iconMap = {
   'performance': Activity,
   'nextjs': Zap,
   'accessibility': Eye,
+  'frontend-architecture': FolderTree,
+  'api-integration': Plug,
+  'testing': TestTube,
+  'cicd': Workflow,
+  'analytics': BarChart3,
+  'leadership': Users,
+  'performance-rapid': Gauge,
   'javascript': Repeat,
   'system-design': Package
 };
