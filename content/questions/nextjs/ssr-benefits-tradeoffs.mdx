@@ -1,0 +1,16 @@
+---
+id: "q-next-ssr-01"
+title: "SSR ka actual benefit kya hai, and trade-off kya hota hai?"
+difficulty: "senior"
+quickAnswer: "SSR ka benefit simple language me ye hai: user ko initial HTML ready milta hai, so first paint better hota hai, SEO friendly hota hai, aur perceived performance improve hoti hai. But trade-off bhi real hai—server pe rendering cost aur potential TTFB increase."
+tags: ["nextjs", "ssr", "performance"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+SSR ka benefit simple language me ye hai: user ko initial HTML ready milta hai, so first paint better hota hai, SEO friendly hota hai, aur perceived performance improve hoti hai.
+
+But trade-off bhi real hai. SSR ka matlab server pe rendering cost. Agar pages heavy ho gaye, ya SSR me too much computation ho, to TTFB badh sakta hai. Aur jab TTFB badhta hai, to user ko lagta hai site slow hai even if client-side fast ho.
+
+Isliye main SSR ko blindly “best” nahi maanta. Main tab use karta hoon jab SSR ka ROI clear ho — SEO, share previews, initial page experience. And server cost ko control karne ke liye caching + smart data fetching strategy set karta hoon.

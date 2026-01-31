@@ -1,0 +1,16 @@
+---
+id: "q-next-ssr-02"
+title: "Next.js me SSR implement karte waqt tumhara typical pattern kya hota hai?"
+difficulty: "senior"
+quickAnswer: "Main usually SSR pages me do cheezein clear rakhta hoon: minimal data for first render, aur non-critical data client side fetch karwa dena. First render ko block mat karo har cheez pe. Jo cheezein secondary hain unko lazy load karwa deta hoon."
+tags: ["nextjs", "ssr", "patterns"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Main usually SSR pages me do cheezein super clear rakhta hoon: pehla, page ko minimal data chahiye first render pe, aur dusra, jo data non-critical hai, usko client side fetch karwa do.
+
+Matlab first render ko block mat karo har cheez pe. Agar “above the fold” content ke liye 2 API calls enough hain, main bas wahi SSR me karta hoon. Baaki “recommended products” ya heavy widgets client side lazy load karwa deta hoon.
+
+Isse SSR ka benefit bhi milta hai aur server load bhi manageable rehta hai. And page stable feel karta hai, because main skeleton/fallbacks plan karta hoon.

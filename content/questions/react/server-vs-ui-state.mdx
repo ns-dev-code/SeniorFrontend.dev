@@ -1,0 +1,27 @@
+---
+id: "q-react-server-state-01"
+title: "How do you separate server state from UI state?"
+difficulty: "senior"
+quickAnswer: "Main server state aur UI state ko mix nahi karta. Server state ka nature alag hota hai (loading, error, caching) aur UI state ka kaam user interaction handle karna hai. Server state ke liye dedicated layer (React Query/SWR) aur UI state ke liye local/global store use karta hoon."
+tags: ["react", "server-state", "patterns"]
+codeSnippets:
+  - title: "Dedicated Layers"
+    language: "typescript"
+    code: |
+      // Server State (Asynchronous, Buffered)
+      const { data } = useQuery(['products'], fetchProducts);
+
+      // UI State (Synchronous, Ephemeral)
+      const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+    explanation: "Mixing these two leads to unpredictable bugs and hard-to-maintain components."
+---
+
+# Deep Answer
+
+Server state is fundamentally different because it is a "cache" of data you don't own. 
+
+### Why the distinction matters
+- **Server State**: Needs polling, prefetching, and stale-while-revalidate logic.
+- **UI State**: Needs immediate response and is usually synchronous.
+
+By keeping them in different "buckets" (e.g., using `tanstack-query` for server data and `zustand` for UI state), you ensure that your UI logic doesn't get cluttered with retry and loading boilerplate.

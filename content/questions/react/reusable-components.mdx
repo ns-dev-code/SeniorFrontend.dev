@@ -1,0 +1,30 @@
+---
+id: "q-react-comp-01"
+title: "How do you design reusable components without over-engineering them?"
+difficulty: "senior"
+quickAnswer: "Honestly, main simple rule follow karta hoon—Component ka API current use-cases cover kare, imaginary future nahi. Business logic button ke andar nahi daalta aur accessibility hamesha by default rakhta hoon."
+tags: ["react", "components", "design-patterns"]
+codeSnippets:
+  - title: "Simple Component API"
+    language: "typescript"
+    code: |
+      interface ButtonProps {
+        variant: 'primary' | 'secondary' | 'outline';
+        size: 'sm' | 'md' | 'lg';
+        children: React.ReactNode;
+        isDisabled?: boolean;
+      }
+    explanation: "Support actual needs, not 'what if' scenarios. Keep business logic in the consumer."
+---
+
+# Deep Answer
+
+Designing for the present is a senior skill. Over-engineering for a future that never comes is a common trap.
+
+### The "Rule of Three"
+Don't abstract until you've duplicated a component at least three times. Until then, you don't truly know what parts are "shared" and what parts are specific.
+
+### Strict API, Flexible Content
+A great reusable component has a strict prop API for its variants but allows flexibility in its contents (using `children`).
+
+**Senior Tip**: Accessibility (ARIA, roles, keyboard nav) is not a feature; it's a baseline requirement for any "shared" component.

@@ -1,0 +1,16 @@
+---
+id: "q-next-auth-01"
+title: "SSR ke saath authentication kaise handle karte ho?"
+difficulty: "senior"
+quickAnswer: "SSR ke case mein cookie-based auth best hai kyunki server ko browser cookies auto mil jati hain. Isse SSR time user context build ho jata hai. Token missing hone pe redirection server side pe karke broken UI prevent karta hoon."
+tags: ["nextjs", "auth", "ssr"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+SSR ke saath auth thoda tricky hota hai, kyunki yahan browser aur server dono involved hote hain. Client side pe token mil jaata hai, par SSR me server ko bhi pata hona chahiye user kaun hai.
+
+Main generally cookie-based auth prefer karta hoon SSR ke case me. Cookies automatically server ko mil jaati hain, to SSR ke time user context build ho jaata hai. Agar token invalid ya missing ho, to main server side pe hi redirect kar deta hoon — client ko half-rendered page dikhane ka koi matlab nahi hota.
+
+Maine ye seekha hai ki SSR auth me clear fallback hona chahiye. Auth fail hua to either login redirect ya safe public view — but kabhi broken UI nahi.

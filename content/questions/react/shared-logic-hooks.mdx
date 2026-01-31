@@ -1,0 +1,29 @@
+---
+id: "q-react-hooks-01"
+title: "How do you handle shared logic across multiple components?"
+difficulty: "senior"
+quickAnswer: "Shared logic ke liye main hamesha pehle custom hooks consider karta hoon. Agar logic UI se independent hai—jaise calculation ya event handling—to hook me nikaalna clean solution hai. Par main over-abstraction bhi avoid karta hoon agar logic sirf ek context me meaningful ho."
+tags: ["react", "hooks", "logic-sharing"]
+codeSnippets:
+  - title: "Custom Hook for Logic"
+    language: "typescript"
+    code: |
+      function useNetworkStatus() {
+        const [isOnline, setIsOnline] = useState(true);
+        // ... event listeners
+        return isOnline;
+      }
+    explanation: "Hooks are the primary way to share headless logic while keeping UI components clean."
+---
+
+# Deep Answer
+
+Custom hooks are the most powerful tool for logic reuse since the arrival of React 16.8.
+
+### When to extract a hook
+- If you find the exact same `useEffect` logic in two places.
+- If you have complex `useReducer` or `useState` logic that makes the component file hard to read.
+- If the logic is purely functional and doesn't depend on the DOM structure.
+
+### The Over-Abstraction Danger
+Don't move logic into a hook just because it *can* be moved. If it creates a hidden dependency or makes it harder to follow the data flow, keep it in the component.

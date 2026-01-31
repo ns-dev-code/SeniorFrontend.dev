@@ -1,0 +1,16 @@
+---
+id: "q-next-hydrate-01"
+title: "Hydration mismatch kya hota hai aur tumne kaise handle kiya hai?"
+difficulty: "senior"
+quickAnswer: "Hydration mismatch tab hota hai jab server render aur client render me non-deterministic cheezein hoti hain (random IDs, time, window size). Main deterministic server render ensure karta hoon aur browser-only logic useEffect ya dynamic import me rakhta hoon."
+tags: ["nextjs", "hydration", "debugging"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Hydration mismatch basically tab hota hai jab server ne jo HTML bheja, client usko hydrate karte time different output produce kar deta hai. User ko kabhi-kabhi flicker dikhta hai, console me hydration warnings aati hain, aur kabhi UI break bhi ho jaata hai.
+
+Ye issue usually tab aata hai jab server render aur client render me non-deterministic cheezein hoti hain — jaise random IDs, current time, window size based rendering, ya locale differences.
+
+Main isko fix karne ke liye simple discipline follow karta hoon: server render should be deterministic. Agar koi cheez browser-only hai, like window ya localStorage, main usko useEffect ke andar shift karta hoon, ya client-only dynamic import karta hoon. Aisa karne se SSR clean rehta hai aur hydration stable ho jaati hai.

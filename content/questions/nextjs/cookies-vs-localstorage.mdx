@@ -1,0 +1,16 @@
+---
+id: "q-next-storage-01"
+title: "Cookies vs localStorage — SSR context me kaunsa better hai aur kyun?"
+difficulty: "senior"
+quickAnswer: "SSR ke liye cookies better hain kyunki server ko inka access hota hai. LocalStorage client-only patterns ke liye rakh deta hoon. Auth, personlization ya detection jaise critical logic ko cookies hi solve karti hain server side render me."
+tags: ["nextjs", "storage", "best-practices"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+SSR context me honestly localStorage ka koi role hi nahi hota, kyunki server ko uska access hi nahi hota. Isliye agar koi cheez SSR ke time required hai, to cookie almost always better option hoti hai.
+
+Cookies server ko automatically mil jaati hain, chahe SSR ho ya API route. Isse auth, personalization, region detection jaise use cases clean ho jaate hain.
+
+LocalStorage main client-only cheezon ke liye rakhta hoon — jaise UI preferences. Par kabhi bhi SSR-critical data localStorage me rakhna mujhe risky lagta hai.

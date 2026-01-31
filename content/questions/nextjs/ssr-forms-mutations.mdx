@@ -1,0 +1,14 @@
+---
+id: "q-next-forms-mutation-01"
+title: "SSR ke saath forms aur mutations kaise handle karte ho?"
+difficulty: "senior"
+quickAnswer: "Hybrid approach: Initial render SSR se, mutations client side. User experience (no full page reload) aur smooth error feedback priority hai. Server validations ko front-end friendly ui formats me map karta hoon."
+tags: ["nextjs", "forms", "mutations"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+SSR forms me main usually hybrid approach follow karta hoon. Initial render SSR se aata hai, par form submission client side handle hota hai. Submission ke baad success/error feedback clearly dikhata hoon. Server validation errors ko UI-friendly format me map karta hoon.
+
+Main ye avoid karta hoon ki SSR me form submission ke baad full page reload ho. User experience ke liye client-side mutation zyada smooth hoti hai.

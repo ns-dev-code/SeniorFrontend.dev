@@ -1,0 +1,16 @@
+---
+id: "q-perf-inp-01"
+title: "INP ya interaction lag tum kaise debug karte ho?"
+difficulty: "senior"
+quickAnswer: "INP JavaScript discipline ka test hai. Agar UI click ke baad lag kare to matlab main thread busy hai. Main DevTools me long tasks dekhta hoon aur expensive logic ko debounce ya background me shift karta hoon."
+tags: ["performance", "inp", "interaction"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+INP mujhe “JavaScript discipline” ka test lagta hai. Agar UI click ke baad lag kar raha hai, to matlab main thread busy hai.
+
+Main sabse pehle performance tab open karta hoon aur long tasks dekhta hoon. Usually problem heavy calculations, unnecessary re-renders, ya badly written event handlers hoti hai. Kabhi-kabhi issue React se zyada third-party scripts ke kaaran hota hai. Analytics ya personalization scripts silently main thread block kar dete hain.
+
+Main code ko break karta hoon — expensive logic ko debounce karta hoon, ya background me shift karta hoon. Goal ye hota hai ki user interaction ke time pe UI free rahe.

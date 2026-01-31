@@ -1,0 +1,14 @@
+---
+id: "q-perf-fonts-01"
+title: "Fonts performance pe kaise impact daalte hain?"
+difficulty: "senior"
+quickAnswer: "Fonts render delay aur CLS create kar sakte hain. Main weight minimal rakhta hoon, critical fonts preload karta hoon aur font-display: swap use karta hoon taaki user content turant dekh sake."
+tags: ["performance", "fonts", "cls"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Fonts ko log underestimate kar dete hain, par ye CLS aur render delay dono ka reason ban sakte hain. Agar font late load hota hai, to text shift hota hai ya invisible rehta hai. User ko lagta hai site broken hai.
+
+Isliye main fonts ko minimal rakhta hoon — unnecessary weights avoid karta hoon. Critical fonts preload karta hoon aur font-display: swap use karta hoon. Mera aim hota hai ki user ko content turant dikhe, chahe perfect font baad me aaye.

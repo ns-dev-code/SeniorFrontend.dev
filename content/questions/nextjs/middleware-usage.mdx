@@ -1,0 +1,14 @@
+---
+id: "q-next-middleware-01"
+title: "Middleware ka use case kya hai, aur kab avoid karte ho?"
+difficulty: "senior"
+quickAnswer: "Request-time decisions ke liye middleware useful hai (auth redirects, geo-routing). Par ise hamesh minimal rakhta hoon kyunki ye har request pe run hota hai. Heavy logic ya calls middleware me avoid karta hoon performace hit se bachne ke liye."
+tags: ["nextjs", "middleware", "performance"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Middleware useful hota hai when you want request-time decisions quickly — auth redirects, geo-based routing, A/B tests, personalization gates.
+
+But middleware ka risk ye hai ki wo har request pe run hota hai. Agar middleware heavy logic karne lage, to performance hit hogi. Isliye main middleware ko minimal rakhta hoon: quick checks, lightweight redirects. Heavy computation ya multiple API calls middleware me avoid karta hoon.

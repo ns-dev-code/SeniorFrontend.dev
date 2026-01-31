@@ -1,0 +1,16 @@
+---
+id: "q-react-context-01"
+title: "What problems have you seen with overusing React Context?"
+difficulty: "senior"
+quickAnswer: "Context powerful hai, par misuse hone par dangerous bhi ho sakta hai. Log ise Redux ka replacement samajh lete hain. Problem tab hoti hai jab Context ke andar bahut zyada state daal di jaati hai—usse saare consumers re-render ho jaate hain."
+tags: ["react", "context", "performance"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Context powerful hai, par misuse hone par kaafi dangerous bhi ho sakta hai. Maine projects me ye dekha hai ki log Context ko Redux ka replacement samajh lete hain.
+
+Problem tab hoti hai jab ek Context ke andar bahut zyada state daal di jaati hai. Us context ka value change hote hi uske saare consumers re-render ho jaate hain, chahe unko wo part chahiye ya nahi. Isliye main Context ko sirf low-frequency, cross-cutting concerns ke liye use karta hoon — jaise theme, auth info, ya locale.
+
+Agar data frequently change ho raha hai ya performance sensitive hai, to main context ko split karta hoon ya phir store solution use karta hoon. Rule simple hai: Context convenience ke liye hai, scalability ke liye nahi.

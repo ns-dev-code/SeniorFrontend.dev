@@ -1,0 +1,16 @@
+---
+id: "q-perf-lcp-01"
+title: "LCP ko tum kaise samajhte ho aur improve kaise karte ho?"
+difficulty: "senior"
+quickAnswer: "LCP mere liye user perception ka metric hai—main content kitni jaldi dikha. Culprits usually oversized images, slow server, ya blocking CSS hote hain. Hero image priority aur TTFB optimization typical fixes hain."
+tags: ["performance", "lcp", "core-web-vitals"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+LCP mere liye simple hai — user ko main content kitni jaldi dikha. Ye sirf number nahi hai, ye user perception ka metric hai.
+
+Maine dekha hai ki real projects me LCP ka sabse bada culprit images hoti hain. Hero image oversized hai, ya server slow hai, ya CSS block kar rahi hai. Isliye main pehle check karta hoon: hero content kya hai, wo kahan se aa raha hai, aur kya uske bina page meaningful hai ya nahi.
+
+Images ke case me main ensure karta hoon ki size sahi ho, lazy loading sirf below-the-fold ho, aur hero image ko priority mile. Agar SSR use ho raha hai, to TTFB bhi dekhna padta hai, kyunki slow server = slow LCP.

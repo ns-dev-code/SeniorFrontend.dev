@@ -1,0 +1,16 @@
+---
+id: "q-next-cache-01"
+title: "Next.js me caching ka approach kya hota hai (SSR/SSG mix)?"
+difficulty: "senior"
+quickAnswer: "Caching layers me (Browser, CDN, Server). SSG best hoti hai default caching ke liye. SSR me caching tricky hoti hai—agar personalized nahi hai to response cache karta hoon, agar hai to API or partial caching. Speed achi hai par correctness priority hai."
+tags: ["nextjs", "caching", "performance"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Caching ko main layers me sochta hoon: browser cache, CDN cache, server cache. SSG me page already static hota hai, so caching naturally best hoti hai.
+
+SSR me caching tricky hoti hai because personalization ho sakta hai. Isliye main decide karta hoon: page truly personalized hai ya sirf “frequently updated” hai. Agar personalized nahi hai, SSR response caching possible hoti hai. Agar personalized hai, to at least API response caching or partial caching possible hoti hai.
+
+Main hamesha ye ensure karta hoon ki caching strategy data correctness break na kare. Speed achhi hai, par wrong price/availability dikhana sabse badi problem hai.

@@ -1,0 +1,16 @@
+---
+id: "q-next-error-01"
+title: "SSR pages me API failure aane par tum kya strategy follow karte ho?"
+difficulty: "senior"
+quickAnswer: "Main handle karta hoon dependency priority. Agar critical data fail ho to safe fallback ya error page SSR se bhejta hoon. Non-critical fail ho to gracefully empty state render karne deta hoon aur background me logs/monitoring capture karta hoon."
+tags: ["nextjs", "error-handling", "ssr"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+SSR me API failure ka impact direct user pe padta hai, isliye yahan error handling aur zyada important ho jaati hai. Main hamesha pehle decide karta hoon: Is API ke bina page completely useless ho jaayega ya partial render possible hai?
+
+Agar critical data fail ho jaata hai, to main SSR pe hi safe fallback ya error page dikhata hoon. Par agar non-critical data fail hua hai, to main page ko render hone deta hoon with graceful empty state.
+
+Sabse important cheez — SSR me error ko silently swallow nahi karta. Logging + monitoring zaroori hoti hai, warna production issues trace karna mushkil ho jaata hai.

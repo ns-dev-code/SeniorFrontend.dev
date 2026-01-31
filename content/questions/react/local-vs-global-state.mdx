@@ -1,0 +1,26 @@
+---
+id: "q-react-state-01"
+title: "How do you decide what goes into local state vs global state?"
+difficulty: "senior"
+quickAnswer: "Main honestly state management ko tool se nahi, scope se decide karta hoon. Sabse pehle main ye poochta hoon — is state ka owner kaun hai? Agar state sirf ek component ke liye hai, jaise input value ya modal open/close, to local state bilkul perfect hota hai."
+tags: ["react", "state-management", "architecture"]
+codeSnippets:
+  - title: "State Decision Matrix"
+    language: "typescript"
+    code: |
+      // ❌ DON'T: Mixing Server & UI State
+      const { data } = useQuery(['user'], fetchUser); 
+      const [isOpen, setIsOpen] = useState(false); // UI State stays separate
+    explanation: "Keep your data synchronization logic separate from your interactive UI toggles."
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Main honestly state management ko tool se nahi, scope se decide karta hoon. Sabse pehle main ye poochta hoon — is state ka owner kaun hai?
+
+Agar state sirf ek component ke liye hai, jaise input value ya modal open/close, to local state bilkul perfect hota hai. Usko global banana sirf complexity badhata hai. Agar state ek hi feature ke andar multiple components use kar rahe hain, to main us state ko feature ke parent me rakhta hoon ya context use karta hoon.
+
+Global state main tab hi introduce karta hoon jab state truly app-wide ho — jaise logged-in user, cart, ya language preference. Maine dekha hai ki unnecessary global state ka result hota hai unexpected re-renders aur debugging pain.
+
+Ek aur cheez jo main strictly follow karta hoon — server state aur UI state ko mix nahi karta. API se aane wala data ka nature alag hota hai aur UI toggles ka alag, aur dono ko same bucket me rakhna future issues create karta hai.

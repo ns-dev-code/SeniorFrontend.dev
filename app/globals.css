@@ -1,26 +1,150 @@
 @import "tailwindcss";
 
+/* @plugin "tailwindcss-animate"; */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* High-Contrast React.dev Palette */
+  --color-canvas: #FFFFFF;
+  --color-canvas-subtle: #F6F7F9;
+  --color-ink: #23272F;
+  --color-ink-subtle: #404756;
+  --color-react-blue: #087EA4;
+  --color-react-blue-subtle: #E6F7FF;
+  
+  --color-background: var(--color-canvas);
+  --color-foreground: var(--color-ink);
+
+  --font-sans: var(--font-geist-sans), -apple-system, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), Menlo, Monaco, Lucida Console, monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  --shadow-nav: 0 2px 4px 0 rgba(0,0,0,0.05);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-canvas);
+  --foreground: var(--color-ink);
+  --card: var(--color-canvas);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-canvas);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-react-blue);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--color-canvas-subtle);
+  --secondary-foreground: var(--color-ink);
+  --muted: var(--color-canvas-subtle);
+  --muted-foreground: var(--color-ink-subtle);
+  --accent: var(--color-react-blue-subtle);
+  --accent-foreground: var(--color-react-blue);
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E6E9EF;
+  --input: #E6E9EF;
+  --ring: var(--color-react-blue);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@utility light-beam {
+  background: radial-gradient(circle at 50% 0%, var(--color-react-blue) 0%, transparent 70%);
+  opacity: 0.15;
+  filter: blur(80px);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glass Detail */
+@utility glass-border {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 1);
+}
+
+/* Documentation Typography */
+@utility prose {
+  h1, h2, h3, h4 {
+    color: var(--color-ink);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+  p {
+    color: var(--color-ink-subtle);
+    line-height: 1.6;
+  }
+  a {
+    color: var(--color-react-blue);
+    text-decoration-line: none;
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+}
+
+/* React.dev Specific Styles */
+@utility bento-card {
+  background-color: var(--color-canvas);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    border-color: var(--color-react-blue);
+    box-shadow: 0 0 0 1px var(--color-react-blue);
+  }
+}
+
+@utility sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+@utility sidebar-link {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink-subtle);
+  &:hover {
+    background-color: var(--color-canvas-subtle);
+    color: var(--color-ink);
+  }
+  &.active {
+    background-color: var(--color-react-blue-subtle);
+    color: var(--color-react-blue);
+  }
 }

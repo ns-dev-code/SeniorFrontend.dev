@@ -1,0 +1,16 @@
+---
+id: "q-react-hooks-02"
+title: "When do you prefer useReducer over useState?"
+difficulty: "senior"
+quickAnswer: "Honestly, main useState ko default maanta hoon. Simple state ke liye useReducer lana mujhe overkill lagta hai. Par jaise hi state thoda complex hota hai — jaise multi-step form ya validation logic — wahan useReducer ka benefit clearly dikhta hai."
+tags: ["react", "hooks", "state"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Honestly, main useState ko default maanta hoon. Simple state ke liye useReducer lana mujhe overkill lagta hai. Par jaise hi state thoda complex hota hai — jaise multi-step form, checkout flow, ya validation logic — wahan useReducer ka benefit clearly dikhta hai.
+
+Reducer ka sabse bada plus ye hota hai ki state transitions explicit ho jaate hain. Tum clearly dekh sakte ho ki kaunse action pe kya change ho raha hai. Maine ye bhi notice kiya hai ki jab business logic thoda heavy hota hai, reducer code zyada readable aur testable hota hai. Debugging ke time pe actions ke through flow samajhna easy ho jaata hai.
+
+Trade-off ye hai ki thoda extra code likhna padta hai, par jab complexity real ho, to ye cost worth it hoti hai.

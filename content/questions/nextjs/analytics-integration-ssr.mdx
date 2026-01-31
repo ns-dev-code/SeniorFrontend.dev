@@ -1,0 +1,14 @@
+---
+id: "q-next-analytics-01"
+title: "SSR pages me analytics kaise integrate karte ho safely?"
+difficulty: "senior"
+quickAnswer: "Analytics tracking hamesha async and client weightless honi chahiye. SSR render blocking logic avoided hai. Scripts hydration ke baad load karta hoon taaki initial user metrics render duplicate fire warnings create na karein."
+tags: ["nextjs", "analytics", "performance"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Analytics ka sabse bada rule mere liye ye hai: tracking kabhi UX ya performance ko hurt nahi kare.
+
+SSR ke time main analytics scripts inject nahi karta in blocking way. Client side pe async load hota hai. Events tab fire hote hain jab UI actually render ho jaaye. Main ye bhi ensure karta hoon ki SSR render duplicate events na trigger kare.

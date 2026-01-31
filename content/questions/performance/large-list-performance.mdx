@@ -1,0 +1,14 @@
+---
+id: "q-perf-virtualize-01"
+title: "Infinite scroll ya large lists me performance kaise maintain karte ho?"
+difficulty: "senior"
+quickAnswer: "Sab kuch DOM me na daalne ke liye virtualization use karta hoon. List item components ko light rakhta hoon taaki heavy children list performance destroy na karein."
+tags: ["performance", "virtualization", "lists"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Large lists me sabse pehli galti hoti hai sab kuch DOM me daal dena. Initially sab smooth lagta hai, par thoda scroll karte hi UI lag karne lagta hai.
+
+Main hamesha pagination ya virtualization consider karta hoon. User ko ek baar me 500 items dikhane ka koi real use nahi hota. Aur main ye bhi ensure karta hoon ki list item component lightweight ho. Heavy child components list performance ko quietly destroy kar dete hain.

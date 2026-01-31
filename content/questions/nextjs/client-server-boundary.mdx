@@ -1,0 +1,14 @@
+---
+id: "q-next-boundary-01"
+title: "Next.js app me “server vs client” boundary manage kaise karte ho?"
+difficulty: "senior"
+quickAnswer: "Boundary ko consciously handle karta hoon. Browser-only code useEffect ke andar rakhta hoon ya client-only dynamic import. Server pe transformation logic prioritize karta hoon par heavy computation caching ke bina server pe avoid karta hoon."
+tags: ["nextjs", "client-server", "patterns"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Main boundary ko very consciously treat karta hoon. Browser-only code ko server render me accidentally chale jaana common bug hai.
+
+Isliye main pattern follow karta hoon: jo cheez window/document pe depend karti hai, wo useEffect ke andar. Ya phir client-only component via dynamic import. I also keep data fetching and transformation mostly on server if it helps initial render, but I avoid heavy computations server side per request unless cached.

@@ -1,0 +1,16 @@
+---
+id: "q-perf-split-01"
+title: "Code splitting ke saath tum kaun-si galtiyaan avoid karte ho?"
+difficulty: "senior"
+quickAnswer: "Sab kuch split kar dena sabse badi galti hai—zyada requests page ko slow kar deti hain. Main use-case driven splitting karta hoon: first screen eager, baaki lazy. Meaningful initial render hamesha priority hoti hai."
+tags: ["performance", "splitting", "best-practices"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Sabse common galti jo maine dekhi hai wo hai — sab kuch split kar do. Isse initial bundle chhota hota hai, par network requests itni zyada ho jaati hain ki page slow lagta hai.
+
+Main code splitting ko use-case driven rakhta hoon. Jo cheez user ko first screen pe chahiye, wo eagerly load hoti hai. Jo cheez optional ya rarely used hai, wo split hoti hai.
+
+SSR ke saath to ye balance aur important ho jaata hai, kyunki hydration ke time bhi chunks load hote hain. Isliye main “first meaningful render” ko hamesha priority deta hoon.

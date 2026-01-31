@@ -1,0 +1,16 @@
+---
+id: "q-perf-bundle-01"
+title: "Bundle size ko tum practically kaise reduce karte ho?"
+difficulty: "senior"
+quickAnswer: "Main bundle analyzer run karke heavy packages identify karta hoon. Dynamic imports se non-critical tools (charts, editors) ko initial bundle se bahar nikalta hoon. splitting balance rakhna important hai."
+tags: ["performance", "bundle-size", "splitting"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Bundle size reduce karna mere liye “blind optimization” nahi hota. Main pehle bundle analyzer run karta hoon aur dekhta hoon kaunsa package sabse zyada jagah le raha hai.
+
+Kai baar pata chalta hai ki hum sirf ek function use kar rahe hain, par poora library import ho raha hai. Ya phir ek heavy component har page pe load ho raha hai jabki rarely use hota hai. Wahan main dynamic import use karta hoon. Heavy cheezein jaise charts, editors, carousels — sab initial bundle se bahar.
+
+Main ye bhi dekhta hoon ki splitting zyada aggressive to nahi ho gayi. Too many chunks bhi performance ko hurt kar sakte hain.

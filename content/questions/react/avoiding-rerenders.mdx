@@ -1,0 +1,16 @@
+---
+id: "q-react-perf-01"
+title: "How do you avoid unnecessary re-renders in React?"
+difficulty: "senior"
+quickAnswer: "Main sabse pehle ek galti accept karta hoon — initial days me main bina measure kiye optimization karta tha. Ab mera approach kaafi simple hai — pehle measure. React DevTools Profiler se main dekhta hoon kaunse components re-render ho rahe hain aur kyun."
+tags: ["react", "performance", "optimization"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Main sabse pehle ek galti accept karta hoon — initial days me main bina measure kiye optimization karta tha, aur kaafi baar uska koi real impact hi nahi hota tha. Ab mera approach kaafi simple hai — pehle measure. React DevTools Profiler se main dekhta hoon kaunse components re-render ho rahe hain aur kyun.
+
+Zyada tar cases me issue ye hota hai ki state unnecessarily upar lift kar di gayi hota hai, ya har render pe new function ya object pass ho raha hota hai. Wahan main pehle state ko uske closest consumer ke paas move karta hoon. Agar phir bhi issue hota hai, tab useCallback ya useMemo use karta hoon.
+
+Ek cheez jo main consciously karta hoon — blind memoization avoid karta hoon. Agar component lightweight hai, to readability ke liye main re-render accept kar leta hoon. Performance ke naam pe code complex banana senior move nahi hota.

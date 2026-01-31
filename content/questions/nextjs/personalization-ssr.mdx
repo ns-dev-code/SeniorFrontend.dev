@@ -1,0 +1,16 @@
+---
+id: "q-next-personalization-01"
+title: "SSR ke saath personalization kaise manage karte ho?"
+difficulty: "senior"
+quickAnswer: "Low-risk personalization (banners) ko client side manage kar leta hoon par high-risk pricing etc ko Carefully SSR karta hoon zero caching ke saath. Correctness mere liye hamesha speed se upar priority rakhti hai."
+tags: ["nextjs", "personalization", "ssr"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Personalization SSR ke saath powerful bhi hota hai aur risky bhi. Powerful isliye kyunki user ko first render pe hi relevant content milta hai. Risky isliye kyunki caching aur correctness dono ka balance banana padta hai.
+
+Galat user ko galat content dikha diya, to trust break ho jaata hai. Isliye main personalization ke level decide karta hoon. High-risk personalization (pricing, offers) ko carefully SSR karta hoon with no caching. Low-risk personalization (recommendations, banners) ko client side ya partial SSR pe shift karta hoon.
+
+Main hamesha correctness ko speed se upar rakhta hoon.

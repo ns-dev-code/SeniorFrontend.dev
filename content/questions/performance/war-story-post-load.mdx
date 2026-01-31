@@ -1,0 +1,16 @@
+---
+id: "q-perf-stories-01"
+title: "Ek baar batao jab performance issue obvious nahi tha, par users complain kar rahe the."
+difficulty: "senior"
+quickAnswer: "Lighthouse green tha par site lag kar rahi thi. Root cause nikal 3rd party script jo load ke baad heavy computation kar rahi thi low-end devices pe. Lesson: Post-load behavior bhi context based test hona chahiye."
+tags: ["performance", "war-stories", "interaction"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Ek project me Lighthouse score kaafi decent tha, aur internally sabko lag raha tha performance theek hai. Par production me users complain kar rahe the ki “site lag karti hai”.
+
+Jab maine thoda deep dive kiya, to pata chala issue React ya rendering ka nahi tha. Problem thi ek third-party personalization script jo page load ke baad heavy computation kar rahi thi. Local testing me wo noticeable nahi thi, par low-end mobile devices pe main thread block ho jaata tha.
+
+Uske baad maine script ko interaction ke baad load karwaya, aur kuch logic debounce kiya. Lesson ye tha ki performance sirf initial load ka game nahi hai, interaction ke baad ka behavior bhi utna hi important hai.

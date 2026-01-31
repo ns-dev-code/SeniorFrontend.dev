@@ -1,0 +1,16 @@
+---
+id: "q-perf-cls-01"
+title: "CLS issues tumne kaahan dekhe hain aur kaise fix kiye?"
+difficulty: "senior"
+quickAnswer: "CLS tab nikalta hai jab UI unstable ho. Maine sabse zyada issue images (!height/width) aur fonts ki wajah se dekhe hain. Fix simple hai: space reserve karo, fonts preload karo aur skeleton use karo."
+tags: ["performance", "cls", "layout-stability"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+CLS usually tab nikalta hai jab UI thoda “unstable” ho. Aur ye cheez users ko bahut irritate karti hai, even if site fast ho.
+
+Maine sabse zyada CLS issues images aur fonts ki wajah se dekhe hain. Image ke liye height/width reserve nahi ki, to page jump karta hai. Font late load hua, to text shift ho gaya.
+
+Fix usually boring hota hai, but effective. Space reserve karo, fonts ko preload karo, aur dynamic content ke liye skeleton ya placeholder rakho. Ek aur common CLS source hota hai marketing banners jo late inject ho jaate hain. Aise cases me main hamesha space pehle se reserve karta hoon, taaki layout stable rahe.

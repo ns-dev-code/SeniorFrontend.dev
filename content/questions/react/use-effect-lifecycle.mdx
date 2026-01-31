@@ -1,0 +1,36 @@
+---
+id: "q-react-01"
+title: "Explain the useEffect dependency array logic to a Junior Dev"
+difficulty: "senior"
+quickAnswer: "It's not just when to 'run'—it's about synchronization. The dependency array tells React 'if these values haven't changed, my effects cached result is still valid'. Omitting dependencies lies to React about what data your effect uses."
+tags: ["react", "hooks", "lifecycle"]
+codeSnippets:
+  - title: "Stale Closure Bug"
+    code: |
+      function Timer() {
+        const [count, setCount] = useState(0);
+
+        useEffect(() => {
+          const interval = setInterval(() => {
+            // Bug: 'count' is captured from the first render
+            console.log(count); 
+          }, 1000);
+          return () => clearInterval(interval);
+        }, []); // Empty dependency array -> closure is stale
+      }
+    explanation: "Because the effect runs only once, the closure captures `count` at 0 and never sees updates."
+---
+
+# Deep Answer
+
+The key to understanding `useEffect` is shifting your mental model from "lifecycle events" (mount/update/unmount) to **synchronization**.
+
+An effect synchronizes an external system (DOM, network, subscription) with the current state of your component. 
+
+### Identity Stability
+
+React relies on reference equality (`Object.is`) to check dependencies. If you pass an object or function created during render into the dependency array without `useMemo` or `useCallback`, your effect will re-sync on *every* render, potentially causing performance issues or infinite loops.
+
+### The Linter is Your Friend
+
+Never suppress the `react-hooks/exhaustive-deps` rule. If the linter says a variable is missing, it is missing. If adding it breaks your logic, your logic needs refactoring (often by using `useRef` formatting unstable values or splitting the effect).

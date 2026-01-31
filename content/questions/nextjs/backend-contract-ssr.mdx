@@ -1,0 +1,16 @@
+---
+id: "q-next-api-01"
+title: "SSR me data fetching — backend ke saath contract kaise manage karte ho?"
+difficulty: "senior"
+quickAnswer: "Main backend team se ye align karta hoon ki payload minimal rahe aur response fast ho. GraphQL me query ko tighten karta hoon aur REST me optimization ka suggestion deta hoon. Caching headers aur error planning first-class considerations hain."
+tags: ["nextjs", "api", "collaboration"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Mere liye SSR me backend contract bahut important ho jaata hai, because server render me latency direct user ko hit karti hai. Main backend team ke saath ye align karta hoon: payload minimal rahe, response fast ho, aur unnecessary nested data na aaye.
+
+GraphQL ho to main query ko tighten karta hoon — sirf required fields. REST ho to endpoints ko optimize karne ka suggestion deta hoon: combined endpoints, pagination, caching headers.
+
+SSR me ek extra angle hota hai: errors. Main always plan karta hoon ki API fail ho to page crash na ho. Fallback UI ya partial render strategy decide karta hoon.

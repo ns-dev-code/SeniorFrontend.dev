@@ -1,0 +1,16 @@
+---
+id: "q-next-api-routes-01"
+title: "Next.js API routes — tum kab use karte ho?"
+difficulty: "senior"
+quickAnswer: "Main API routes ko lightweight 'middle layer' ke taur pe use karta hoon, jaise secrets hide karne ya 3rd party API call ke liye. Inhe full backend replacement nahi samajhta. Integration glue aur utilities ke liye perfect hain."
+tags: ["nextjs", "api-routes", "architecture"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+API routes main tab use karta hoon jab mujhe frontend aur backend ke beech ek lightweight “middle layer” chahiye ho. Especially jab secrets hide karne hain ya third-party API call server side se karni hai.
+
+Example: frontend directly payment provider ya secure token exchange ko call na kare. Main API route bana deta hoon jo server side se call kare and safe response de.
+
+But main API routes ko full backend replacement ki tarah treat nahi karta. Agar system large hai, to dedicated backend services best hoti hain. API routes = integration glue and lightweight utilities, that’s it.

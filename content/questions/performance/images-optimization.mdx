@@ -1,0 +1,16 @@
+---
+id: "q-perf-images-01"
+title: "Images optimization tum kaise approach karte ho?"
+difficulty: "senior"
+quickAnswer: "Images sabse bada lever hain. Main display size vs load size check karta hoon aur modern formats use karta hoon. Above-the-fold hero images ko priority deta hoon without lazy loading, baaki ko lazy load."
+tags: ["performance", "images", "lcp"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Images almost har project me sabse bada performance lever hoti hain. Aur ironically, ye sabse easy fix bhi hota hai.
+
+Main sabse pehle ye check karta hoon ki image ka actual display size kya hai. Kai baar 300px ka image 2000px ka load ho raha hota hai. Uske baad format — modern formats use karna huge difference laata hai. Aur lazy loading sirf tab karta hoon jab image below-the-fold ho.
+
+Hero image ke case me main kabhi lazy load nahi karta. Usko priority deta hoon, warna LCP suffer karta hai.

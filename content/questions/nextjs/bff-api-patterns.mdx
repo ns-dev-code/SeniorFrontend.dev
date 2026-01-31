@@ -1,0 +1,16 @@
+---
+id: "q-next-bff-01"
+title: "BFF (Backend for Frontend) pattern Next.js me kaise use kiya hai?"
+difficulty: "senior"
+quickAnswer: "Frontend key needs ke hisaab se data shape karne ke liye API routes use karta hoon. Inhe middleware ki tarah treat karke multiple complex APIs call hide karta hoon aur contracts loosely coupled rakhta hoon frontend simplicity ke liye."
+tags: ["nextjs", "bff", "api-routes"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+BFF pattern ka main idea ye hota hai ki frontend backend se directly baat na kare, balki ek thin server layer ho jo frontend ke needs ke hisaab se data shape kare.
+
+Next.js API routes iske liye kaafi achha fit hain. Maine unko use kiya hai jab mujhe multiple backend APIs ko combine karna hota hai ya sensitive logic hide karna hota hai. Example ke liye, frontend ke liye ek simple response chahiye hota hai, par backend side pe 3 APIs call ho rahi hoti hain.
+
+BFF se frontend code simple rehta hai aur backend contracts loosely coupled ho jaate hain. Par main ye bhi dhyaan rakhta hoon ki API routes ko full backend banane ki koshish na ho.

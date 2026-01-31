@@ -1,0 +1,16 @@
+---
+id: "q-next-middleware-ssr-01"
+title: "Next.js middleware vs SSR logic — kaunsa kab?"
+difficulty: "senior"
+quickAnswer: "Simple Rule: Middleware is the Gatekeeper (auth redirects, geo-routing). SSR is the Renderer (data fetching, rendering complex rules). Middleware me heavy logic avoid karta hoon requests slow hone se bachane ke liye."
+tags: ["nextjs", "middleware", "ssr"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Middleware aur SSR logic ka use-case overlap lagta hai, par dono ka role alag hai.
+
+Middleware main quick decisions ke liye rakhta hoon — auth redirect, geo-based routing, A/B test bucket decide karna. SSR logic heavy hota hai — data fetching, rendering, business rules. Main middleware me kabhi heavy computation nahi daalta, warna har request slow ho jaati hai.
+
+Simple rule follow karta hoon: middleware = gatekeeper, SSR = renderer.

@@ -1,0 +1,18 @@
+---
+id: "q-next-render-01"
+title: "SSR vs SSG vs CSR — tum kaise decide karte ho?"
+difficulty: "senior"
+quickAnswer: "Main rendering strategy ko “tech choice” ki tarah nahi dekhta, main usko “product requirement” ki tarah dekhta hoon. Sabse pehle main ye clear karta hoon ki page ka goal kya hai — SEO chahiye ya not, data kitna dynamic hai, aur user experience ka expectation kya hai."
+tags: ["nextjs", "rendering", "architecture"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Dekho, main rendering strategy ko “tech choice” ki tarah nahi dekhta, main usko “product requirement” ki tarah dekhta hoon. Sabse pehle main ye clear karta hoon ki page ka goal kya hai — SEO chahiye ya not, data kitna dynamic hai, aur user experience ka expectation kya hai.
+
+SSG main tab choose karta hoon jahan content mostly stable ho, like marketing pages ya docs type pages. Wahan SSG ka benefit ye hota hai ki page basically CDN se serve hota hai, speed amazing hoti hai aur load consistent rehta hai.
+
+SSR tab choose karta hoon jab data frequently change hota ho, ya personalization involved ho, ya user-specific content ho. Example e-commerce me product page jahan price/availability change hota rehta hai, ya region-based content ho.
+
+CSR main tab rakh deta hoon jab SEO critical nahi hota, jaise internal dashboards ya authenticated tools. And honestly best apps me mix hota hai — ek hi strategy sab jagah force karna mujhe real-world me practical nahi lagta.

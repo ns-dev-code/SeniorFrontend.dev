@@ -1,0 +1,16 @@
+---
+id: "q-next-perf-01"
+title: "SSR pages me performance optimize kaise karte ho?"
+difficulty: "senior"
+quickAnswer: "Performance optimize karne ka rule ye hai: server ko unnecessary kaam mat karao. Main measure karta hoon TTFB aur waterfall fetch avoid karta hoon. Caching response ya API side pe kafi help karti hai. Fast meaningful first render priority hoti hai."
+tags: ["nextjs", "ssr", "performance"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+SSR performance optimize karne ka sabse bada rule mere liye ye hai: server ko unnecessary kaam mat karao. Main pehle measure karta hoon TTFB, server logs, aur data fetching timings.
+
+Fir main dekhta hoon kya kuch data parallel fetch ho sakta hai instead of waterfall. Caching is huge. Agar same page same params ke saath baar-baar hit ho raha hai, to SSR response ko cache karna makes sense. Kuch cases me API responses cache karna bhi enough hota hai.
+
+Aur main SSR page ko lightweight rakhta hoon. Jo cheezein first view ke liye necessary nahi, unko defer kar deta hoon. SSR ka main goal “fast meaningful first render” hota hai, not “render everything on server.”

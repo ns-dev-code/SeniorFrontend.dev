@@ -1,0 +1,16 @@
+---
+id: "q-react-lifting-01"
+title: "How do you decide where to lift state in React?"
+difficulty: "senior"
+quickAnswer: "Main hamesha pehle ye samajhne ki koshish karta hoon ki state ka actual consumer kaun hai. Agar do ya teen sibling components ko chahiye, tab main unka nearest common parent dhundhta hoon. Global store ya context ko main last option rakhta hoon."
+tags: ["react", "state", "architecture"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+State lift karna ek cheez hai jo theory me simple lagti hai, par real projects me galat ho jaati hai. Maine kaafi baar dekha hai ki ek chhoti si requirement ke liye state bahut upar chali jaati hai, aur phir aadha app re-render hone lagta hai.
+
+Main hamesha pehle ye samajhne ki koshish karta hoon ki state ka actual consumer kaun hai. Agar sirf ek child component use kar raha hai, to state ko upar le jaane ka koi reason nahi hota. Agar do ya teen sibling components ko chahiye, tab main unka nearest common parent dhundhta hoon. Global store ya context ko main last option rakhta hoon.
+
+Experience se maine ye seekha hai ki state jitni niche hoti hai, utna system predictable hota hai. State ko upar lift karna easy hai, par neeche wapas lana mushkil hota hai.

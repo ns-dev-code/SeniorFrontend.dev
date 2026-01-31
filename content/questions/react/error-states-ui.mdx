@@ -1,0 +1,29 @@
+---
+id: "q-react-errors-01"
+title: "How do you handle error states in React UI?"
+difficulty: "senior"
+quickAnswer: "Error handling sirf console error nahi, UI ka first-class citizen hai. Main critical sections ke around Error Boundaries use karta hoon taaki pura app crash na ho. User ko hamesha actionable message (retry, reload) deta hoon. Trust build karna priority hoti hai."
+tags: ["react", "error-handling", "ux"]
+codeSnippets:
+  - title: "Error Boundary Usage"
+    language: "tsx"
+    code: |
+      <ErrorBoundary fallback={<ErrorDisplay />}>
+        <HeavyFeature />
+      </ErrorBoundary>
+    explanation: "Protect the whole app from crashing if a single feature runtime exception occurs."
+---
+
+# Deep Answer
+
+Errors are inevitable. How you handle them separates a Junior from a Senior.
+
+### Global vs Feature Errors
+- **Global Errors**: Use a top-level Error Boundary for things like catastrophic app failure.
+- **Feature Errors**: Wrap unstable features (like third-party widgets) in their own Boundaries so the user can still use the rest of the app.
+
+### Actionable Feedback
+Never just say "Something went wrong". 
+- If it's a network error? Provide a "Retry" button.
+- If it's a data mismatch? Provide a "Contact Support" link.
+- If it's a 404? Redirect them to a useful search page.

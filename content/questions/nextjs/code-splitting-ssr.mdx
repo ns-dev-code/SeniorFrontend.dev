@@ -1,0 +1,14 @@
+---
+id: "q-next-splitting-01"
+title: "Code splitting ke saath SSR ka balancing act kaise karte ho?"
+difficulty: "senior"
+quickAnswer: "Main components jo rarely use ho ya heavy ho (charts, modals) split karta hoon, above-the-fold list ko stable rakhta hoon. Bundle fat hone aur over-splitting ke beech balance measure karta hoon bundle assets analyze karke."
+tags: ["nextjs", "code-splitting", "ssr"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Ye kaafi practical issue hai. Agar tum everything split kar doge, initial page pe too many chunks load honge. Agar kuch bhi split nahi karoge, bundle fat ho jayega.
+
+Main usually split karta hoon those components jo rarely used hain or heavy hain: charts, editors, modals, personalization widgets. Aur above-the-fold content ko stable rakhta hoon. SSR ke saath main yeh ensure karta hoon ki first render ke liye minimum assets required ho.

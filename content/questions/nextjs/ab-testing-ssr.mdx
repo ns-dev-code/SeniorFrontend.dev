@@ -1,0 +1,14 @@
+---
+id: "q-next-ab-testing-01"
+title: "SSR ke saath A/B testing kaise manage karte ho?"
+difficulty: "senior"
+quickAnswer: "Konsistency key hai. Variant decisions SSR time (cookies/headers) se determine kar leta hoon hydration mismatches avoid karne ke liye. Server and Client ek hi state version share karte hain for reliable data tracking."
+tags: ["nextjs", "ab-testing", "ssr"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+A/B testing SSR ke saath thoda sensitive hota hai. User ko ek hi variant consistently dikhna chahiye. Isliye variant decision SSR ke time hi ho jaata hai — cookie ya header ke through.
+
+Client aur server dono same variant use karte hain. Hydration mismatch se bachne ke liye yeh bahut important hota hai.

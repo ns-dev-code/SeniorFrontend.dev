@@ -1,0 +1,33 @@
+---
+id: "q-react-forms-01"
+title: "How do you handle complex forms in React applications?"
+difficulty: "senior"
+quickAnswer: "Simple forms ke liye controlled inputs, par complex forms (multi-step, conditional) ke liye main reducer-based approach ya dedicated library maanta hoon. Isse values, errors, aur submitting states ek jagah manage ho jaate hain. Validation har keystroke pe nahi, blur ya submit pe karta hoon."
+tags: ["react", "forms", "reducer"]
+codeSnippets:
+  - title: "Form State Reducer"
+    language: "typescript"
+    code: |
+      const formReducer = (state, action) => {
+        switch (action.type) {
+          case 'SET_VALUE':
+            return { ...state, values: { ...state.values, [action.field]: action.value } };
+          case 'SET_ERROR':
+            return { ...state, errors: { ...state.errors, [action.field]: action.error } };
+          // ...
+        }
+      };
+    explanation: "Centralizing form state makes it easier to handle complex inter-field validation logic."
+---
+
+# Deep Answer
+
+Forms are the most interactive part of a frontend app and often the most buggy.
+
+### The Complex Form Decision Matrix
+- **Level 1 (1-3 fields)**: Standard `useState` per field.
+- **Level 2 (Single section, multiple fields)**: A single `useState` object or `useReducer`.
+- **Level 3 (Multi-step, cross-field validation, performance sensitive)**: Use a specialized library like `React Hook Form` or a custom optimized Context-based form provider.
+
+### Performance Tip
+In very large forms, avoid re-rendering the entire form when one input changes. Use "Uncontrolled" components with `refs` or a form library that uses subscriptions to update only the specific input being typed in.

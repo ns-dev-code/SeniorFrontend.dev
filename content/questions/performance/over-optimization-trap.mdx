@@ -1,0 +1,14 @@
+---
+id: "q-perf-overopt-01"
+title: "Kab performance optimization ka ulta effect pada?"
+difficulty: "senior"
+quickAnswer: "Over-memoization se code complexity badh gayi aur Gain negligible. Rule: Agar profiler me problem nahi dikh rahi to optimization mat karo, warna readability sacrifice sacrifice long term long term loss hai."
+tags: ["performance", "memoization", "readability"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Ek baar maine over-memoization ki galti ki. Almost har component me useMemo aur useCallback daal diya, bina proper profiling ke. Result ye hua ki code complexity badh gayi, debugging mushkil ho gayi, aur performance gain negligible tha.
+
+Kuch cases me memory usage bhi badh gayi. Uske baad maine ek rule adopt kiya — agar profiler me problem dikh nahi rahi, to optimization mat karo. Performance ke naam pe code readability sacrifice karna long-term loss hota hai.

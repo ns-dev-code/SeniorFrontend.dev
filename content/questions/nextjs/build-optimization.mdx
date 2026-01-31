@@ -1,0 +1,16 @@
+---
+id: "q-next-build-01"
+title: "Next.js me build optimization kya hota hai practically?"
+difficulty: "senior"
+quickAnswer: "Build optimization in Next.js is a mix of bundle size control and build time efficiency. Main Bundle Analyzer use karta hoon aur heavy libs ko isolate karta hoon. Build time manage karne ke liye expensive generation loops aur massive re-exports avoid karta hoon."
+tags: ["nextjs", "build-optimization", "bundle-size"]
+---
+
+# Deep Answer
+
+### Interview Answer (Aise bolna hai):
+Build optimization mere liye do cheezon ka mix hai: bundle size control + build time control.
+
+Bundle ke liye main analyzer use karta hoon. Heavy libs ko isolate karta hoon, dynamic import karta hoon, and ensure karta hoon tree-shaking actually ho raha hai. Build time ke liye main avoid karta hoon unnecessary work: massive re-exports, expensive build scripts, and huge static generation loops.
+
+CI me caching help karta hai. Overall goal: build reliable, repeatable, and fast.
